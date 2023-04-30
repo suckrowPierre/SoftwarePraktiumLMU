@@ -1,0 +1,67 @@
+.root {
+    -fx-background-image: url("concrete.jpg");
+    -fx-background-size: auto;
+    -fx-background-position: center;
+    -fx-font-family: "Verdana";
+
+}
+
+.winnerwindow {
+    -fx-background-image: url("winnerbackground.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-font-family: "Verdana";
+}
+
+.button {
+    -fx-base: #0183B4;
+}
+
+.lessimportantbutton {
+    -fx-base: #999999;
+
+}
+
+.errortext {
+    -fx-text-fill: #D32500;
+    -fx-font-size: 14px;
+
+}
+
+.scroll-pane{
+   -fx-background-color:transparent;
+}
+
+.scroll-pane .viewport {
+       -fx-background-color: transparent;
+}
+
+.list-view {
+    -fx-background-color: lightgrey;
+}
+
+.list-view .list-cell:even {
+    -fx-background-color: lightgrey;
+    -fx-text-fill: black;
+}
+
+.list-view .list-cell:odd {
+    -fx-background-color: ghostwhite;
+    -fx-text-fill: black;
+}
+
+.check-box .box{
+    -fx-base: #0183B4;
+}
+
+.hyperlink{
+    -fx-padding: 0 0 0 0;
+    -fx-text-fill: black;
+    -fx-underline: true;
+
+}
+.hyperlink:hover{
+    -fx-text-fill: #0183B4;
+}
+
+

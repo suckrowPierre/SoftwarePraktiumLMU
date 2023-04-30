@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="communication.client.chatgui.BoardController">
+   <center>
+      <ScrollPane fx:id="scrollpane" pannable="true" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <VBox fx:id="checkpointvbox" alignment="TOP_CENTER" prefWidth="250.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Reached Checkpoints">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ListView fx:id="checkpointlistview" maxWidth="250.0" prefHeight="130.0" />
+            <Pane fx:id="chatroombox" maxWidth="250.0" prefHeight="285.0" />
+            <Label fx:id="bottomlabel" styleClass="errortext" textAlignment="CENTER" wrapText="true" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="slot0" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="slot1" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="slot2" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="slot3" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="slot4" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <Line endX="-355.905517578125" endY="1.88726806640625" startX="-355.6983642578125" startY="-122.67886352539062" strokeWidth="5.0" />
+            <ImageView fx:id="upgrade0" fitHeight="132.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="upgrade1" fitHeight="132.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="upgrade2" fitHeight="132.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="upgrade3" fitHeight="132.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="upgrade4" fitHeight="132.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" />
+            <ScrollPane vbarPolicy="NEVER">
+               <content>
+                  <HBox>
+                     <children>
+                        <HBox fx:id="memoryswapbox">
+                           <children>
+                              <VBox alignment="TOP_CENTER" minWidth="-Infinity" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <Label text="You got:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="15.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="newcard1" text="Label" />
+                                    <Label fx:id="newcard2" text="Label" />
+                                    <Label fx:id="newcard3" text="Label" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets right="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" minWidth="-Infinity" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <ListView fx:id="toremovelistview" onDragDropped="#handleDroponListView" onDragOver="#handleDragOverListView" prefHeight="70.0" prefWidth="110.0" />
+                                    <Button fx:id="memoryswapbtn" mnemonicParsing="false" onAction="#sendmemoryswapcards" text="Send">
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="adminprivvbox" alignment="TOP_CENTER" minWidth="-Infinity" prefWidth="115.0" spacing="20.0">
+                           <children>
+                              <Label text="Admin Privilege:">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ChoiceBox fx:id="privilegechoicebox" prefWidth="50.0" />
+                              <Button fx:id="sendbtn" mnemonicParsing="false" onAction="#sendadminprivilege" text="Send" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <left>
+      <VBox alignment="TOP_CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+      <children>
+         <Label fx:id="timertext" text="Timer: --">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+            <Label text="Handcards">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         <GridPane hgap="10.0" prefWidth="300.0" vgap="10.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="92.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="92.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="92.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="125.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="125.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="125.0" valignment="CENTER" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="card0" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="card1" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+            </ImageView>
+            <ImageView fx:id="card2" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+            </ImageView>
+            <ImageView fx:id="card3" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+            </ImageView>
+            <ImageView fx:id="card4" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            </ImageView>
+            <ImageView fx:id="card5" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            </ImageView>
+            <ImageView fx:id="card6" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+            </ImageView>
+            <ImageView fx:id="card7" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            </ImageView>
+            <ImageView fx:id="card8" fitHeight="132.0" fitWidth="92.0" onDragDetected="#handleDragDetection" onDragDone="#handleSuccess" onDragDropped="#handleDrop" onDragOver="#handleDragOver" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            </ImageView>
+         </children>
+         </GridPane>
+         <Label fx:id="hinttext" prefWidth="305.0" styleClass="errortext" text="Drag and drop your cards into the registers (five left cards) below." textAlignment="CENTER" wrapText="true">
+            <HBox.margin>
+               <Insets top="5.0" />
+            </HBox.margin>
+         </Label>
+      </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+
+   </left>
+</BorderPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" stylesheets="style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="communication.client.chatgui.LoginController">
+   <children>
+      <Label text="IP-address:">
+         <padding>
+            <Insets left="5.0" top="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="iptext">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TextField>
+      <Label text="Portnumber:">
+         <padding>
+            <Insets left="5.0" top="10.0" />
+         </padding>
+      </Label>
+      <TextField fx:id="porttext" />
+      <HBox alignment="CENTER">
+         <children>
+            <Button fx:id="btn" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnPress" text="Connect" textAlignment="CENTER" />
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="errortext" styleClass="errortext">
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Label>
+      <CheckBox fx:id="aicheckbox" mnemonicParsing="false" text="connect AI">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </CheckBox>
+      <TextField fx:id="version" promptText="Version" text="Version 2.1">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </TextField>
+
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>
